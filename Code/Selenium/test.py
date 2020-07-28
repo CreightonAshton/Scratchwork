@@ -2,7 +2,7 @@
 from selenium import webdriver
 import time
 
-DRIVER_PATH = '/Users/Creighton/anaconda3/bin'
+DRIVER_PATH = '/usr/local/bin/chromedriver'
 driver = webdriver.Chrome(executable_path=DRIVER_PATH)
 driver.get('https://google.com')
 time.sleep(5)
