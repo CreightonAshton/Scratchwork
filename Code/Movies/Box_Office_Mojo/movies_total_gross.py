@@ -16,6 +16,9 @@ running_release_dates = []
 running_year = []
 
 # Scraper
+t0 = time.time() # timer
+counter = 0
+
 options = Options()
 options.headless = True
 
@@ -25,7 +28,7 @@ DRIVER_PATH = '/usr/local/bin/chromedriver'
 driver = webdriver.Chrome(options=options, executable_path=DRIVER_PATH)
 
 # let's loop through each year
-for year_to_scrape in years_to_scrape:
+for counter, year_to_scrape in enumerate(years_to_scrape):
 
     # Go to the site we want to scrape
     driver.get(f'https://www.boxofficemojo.com/year/{year_to_scrape}/')
@@ -48,6 +51,12 @@ for year_to_scrape in years_to_scrape:
     running_release_dates += [release_date.text for release_date in release_dates]
     running_year += [year_to_scrape for _ in range(entries-1)]
 
+    # timer
+    if counter % 5 == 0:
+        print(f'scraped {counter} years')
+        print(f'current runtime is {round((time.time() - t0)/60,2)} mins')
+        print('----------')
+
 
 # close the driver
 driver.quit()
@@ -69,4 +78,4 @@ movies_df = movies_df.drop(
 )
 
 # save out the DataFrame
-movies_df.to_csv('../../Data/Movies/movies_1977-2020.csv', index=False)
+movies_df.to_csv('../../../Data/Movies/Box_Office_Mojo/movies_1977-2019.csv', index=False)
