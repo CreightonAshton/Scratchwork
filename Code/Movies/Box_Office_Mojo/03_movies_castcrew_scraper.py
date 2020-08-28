@@ -74,8 +74,8 @@ driver.quit()
 print(f'total runtime is {round((time.time() - t0)/60,2)} mins') #timer
 
 castcrew_dict = {
-    'bom_id' : running_bom_ids,
-    'imdb_id' : running_imdb_ids,
+    'bom_id' : bom_ids,
+    'imdb_id' : imdb_ids,
     'title' : running_titles,
     'crew' : running_crew,
     'cast' : running_cast
