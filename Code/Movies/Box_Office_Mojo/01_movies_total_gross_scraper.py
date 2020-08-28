@@ -78,4 +78,4 @@ movies_df = movies_df.drop(
 )
 
 # save out the DataFrame
-movies_df.to_csv('../../../Data/Movies/Box_Office_Mojo/movies_1977-2019.csv', index=False)
+movies_df.to_csv('../../../Data/Movies/Box_Office_Mojo/movies_total_gross.csv', index=False)
