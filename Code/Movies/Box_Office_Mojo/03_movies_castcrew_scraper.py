@@ -6,7 +6,7 @@ import time
 import pandas as pd
 
 # read in summary df
-summary_df = pd.read_csv('../../../Data/Movies/Box_Office_Mojo/movies_summary.csv')
+summary_df = pd.read_csv('../../../Data/Movies/Box_Office_Mojo/raw/movies_summary.csv')
 
 # get ids
 imdb_ids = summary_df['imdb_id'].values
@@ -84,4 +84,4 @@ castcrew_dict = {
 castcrew_df = pd.DataFrame(castcrew_dict)
 
 # save our file
-castcrew_df.to_csv('../../../Data/Movies/Box_Office_Mojo/movies_castcrew.csv', index=False)
+castcrew_df.to_csv('../../../Data/Movies/Box_Office_Mojo/raw/movies_castcrew.csv', index=False)

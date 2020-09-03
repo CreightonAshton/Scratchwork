@@ -6,7 +6,7 @@ import time
 import pandas as pd
 
 # read in movies_total_gross
-tg_df = pd.read_csv('../../../Data/Movies/Box_Office_Mojo/movies_total_gross.csv')
+tg_df = pd.read_csv('../../../Data/Movies/Box_Office_Mojo/raw/movies_total_gross.csv')
 
 # get list of bom_ids
 bom_ids = tg_df['bom_id'].values
@@ -94,4 +94,4 @@ summary_dict = {
 summary_df = pd.DataFrame(summary_dict)
 
 # save our file
-summary_df.to_csv('../../../Data/Movies/Box_Office_Mojo/movies_summary.csv', index=False)
+summary_df.to_csv('../../../Data/Movies/Box_Office_Mojo/raw/movies_summary.csv', index=False)
